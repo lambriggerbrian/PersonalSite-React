@@ -1,0 +1,69 @@
+{
+  "short_name": "Brian Lambrigger",
+  "name": "Brian Lambrigger Portfolio",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#282c34",
+  "shortcuts": [
+    {
+      "name": "Homepage",
+      "short_name": "Homepage",
+      "description": "Brian Lambrigger's Goings and Happenings",
+      "url": "/",
+      "icons": [{"src": "logo192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "About Brian",
+      "short_name": "About",
+      "description": "About me",
+      "url": "/about",
+      "icons": [{"src": "logo192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Projects Index",
+      "short_name": "Projects",
+      "description": "My projects of past, present, and future",
+      "url": "/projects",
+      "icons": [{"src": "logo192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "The world according to my open chrome tabs",
+      "url": "/blog",
+      "icons": [{"src": "logo192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Contact Information",
+      "short_name": "Contact",
+      "description": "Let's get in touch",
+      "url": "/contact",
+      "icons": [{"src": "logo192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Hiring Information",
+      "short_name": "Hire Me",
+      "description": "Employment, freelance, and contract inquiries",
+      "url": "/hire-me",
+      "icons": [{"src": "logo192.png", "sizes": "192x192"}]
+    }
+  ]
+}

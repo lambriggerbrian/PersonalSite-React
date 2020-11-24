@@ -1,23 +1,35 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
-import styled from '@emotion/styled';
-import { MenuIcon } from './Icons';
-import menuIcon from '../menu.png';
+import { css } from '@emotion/core';
+import Menu from './Menu';
+import { useViewport } from './Responsive';
+import manifest from '../manifest.json';
 import '../App.css';
+import { Logo } from './Logo';
 
-export const HeaderDiv = styled.div`
+export const HeaderStyle = css`
+  background-color: #5d2b906b;
   position: fixed;
   box-sizing: border-box;
   top: 0;
   display: flex;
-  align-items: center;
-  background-color: #282c34;
   justify-content: space-between;
-  padding: 10px, 20px;
-  width: 100%;
 `;
 
-export const SiteNameLink = styled.a`
-  color: #00cafe;
+const DesktopStyle = css`
+  width: 5%;
+  height: 100%;
+`;
+
+const MobileStyle = css`
+  width: 100%;
+  height: 10%;
+`;
+
+const linkData = manifest.shortcuts;
+
+export const SiteNameLink = css`
+  color: #23a9f2;
   font-family: 'Segoe UI', 'Helvetica', 'sans-serif';
   font-weight: bold;
   font-size: 32px;
@@ -25,14 +37,16 @@ export const SiteNameLink = styled.a`
 `;
 
 export const Header = () => {
+  const { useMobile } = useViewport();
   return (
-    <HeaderDiv>
-      <div>
-        <MenuIcon src={menuIcon} />
-        <SiteNameLink href="/">Brian Lambrigger</SiteNameLink>
-      </div>
-    </HeaderDiv>
+    <div
+      css={css`
+        ${HeaderStyle}
+        ${useMobile() ? MobileStyle : DesktopStyle}
+      `}
+    >
+      <Logo />
+      <Menu links={linkData} />
+    </div>
   );
 };
-
-export { Header as default };
