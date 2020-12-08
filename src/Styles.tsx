@@ -1,11 +1,108 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from '@emotion/core';
+import styled from '@emotion/styled';
+
+export const HeaderFont = css`
+  font-family: 'Courier New', 'Segoe UI', 'Helvetica', 'sans-serif';
+  text-decoration: none;
+  color: #23a9f2;
+`;
 
 export const LinkTextStyle = css`
   color: #23a9f2;
   font-family: 'Segoe UI', 'Helvetica', 'sans-serif';
   font-weight: bold;
-  font-size: 32px;
   text-decoration: none;
+`;
+
+export const PlaceholderDiv = styled.div`
+  background-color: green;
+  min-width: 40px;
+  min-height: 40px;
+`;
+
+export const SpacerDiv = styled.div`
+  height: 1200px;
+  background-color: purple;
+`;
+
+export const GridDiv4x4 = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 10px 10px;
+`;
+
+export const FadeInDiv = styled.div`
+  --max-opacity: 0.5;
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
+  opacity: var(--max-opacity);
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+`;
+
+export const SlideUpDiv = styled.div`
+  animation-name: slideUp;
+  animation-duration: 0.5s;
+
+  @keyframes slideUp {
+    0% {
+      bottom: -100%;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+`;
+
+export const LeftFlexRow = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
+  align-items: center;
+`;
+
+export const CenterFlexRow = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const RightFlexRow = styled.div`
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+export const LeftFlexCol = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: left;
+  align-items: stretch;
+`;
+
+export const CenterFlexCol = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 2;
+  justify-content: center;
+  align-items: stretch;
+`;
+
+export const RightFlexCol = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: Right;
+  align-items: stretch;
 `;

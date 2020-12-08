@@ -1,27 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import { css } from '@emotion/core';
 import './App.css';
-import { Header } from './Components/Header';
 import { ViewportProvider } from './Components/Responsive';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { HomePage } from './Pages/HomePage';
+import { WindowLocationProvider } from './Components/WindowLocation';
 
 function App() {
+  library.add(fab);
   return (
     <ViewportProvider>
-      <div
-        css={css`
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            0deg,
-            rgba(17, 15, 18, 1) 53%,
-            rgba(21, 53, 82, 1) 100%
-          );
-        `}
-      >
-        <Header />
-      </div>
+      <WindowLocationProvider>
+        <HomePage />
+      </WindowLocationProvider>
     </ViewportProvider>
   );
 }

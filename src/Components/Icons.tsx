@@ -1,10 +1,42 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
-import styled from '@emotion/styled';
-import menuIcon from '../menu.png';
+import { css } from '@emotion/core';
+import { BiMenu } from 'react-icons/bi';
+import { FaArrowCircleUp } from 'react-icons/fa';
 
-const MenuIconStyled = styled.img`
-  color: white;
-  height: 100%;
-`;
+export const MenuIcon = () => (
+  <div
+    css={css`
+      height: inherit;
+      width: inherit;
+      min-width: 70px;
+    `}
+  >
+    <BiMenu
+      css={css`
+        height: 100%;
+        width: 100%;
+      `}
+      size="100%"
+      color="white"
+    />
+  </div>
+);
 
-export const MenuIcon = () => <MenuIconStyled src={menuIcon} />;
+export const ScrollArrowIcon = () => (
+  <div
+    css={css`
+      height: inherit;
+      width: inherit;
+      min-width: 40px;
+    `}
+  >
+    <FaArrowCircleUp
+      css={css`
+        width: 100%;
+        height: 100%;
+      `}
+      size="100%"
+    />
+  </div>
+);
