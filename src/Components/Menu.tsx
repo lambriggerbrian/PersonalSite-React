@@ -2,7 +2,6 @@
 import React, { FC, useState } from 'react';
 import { css } from '@emotion/core';
 import { MenuIcon } from './Icons';
-import { useViewport } from './Responsive';
 import { LinkTextStyle } from '../Styles';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
@@ -39,7 +38,6 @@ const DropdownElement = css`
 `;
 
 export const Menu: FC<Props> = ({ links }) => {
-  const { useMobile } = useViewport();
   return <MenuMobileComponent links={links} />;
   // return useMobile() ? (
   //   <MobileComponent links={links} />
@@ -54,7 +52,6 @@ const MenuMobileComponent: FC<Props> = ({ links }) => {
   return (
     <div
       onClick={toggleDropdown}
-      onMouseEnter={() => setDropdownVisible(true)}
       css={css`
         min-width: 70px;
         width: 5vw;
@@ -67,7 +64,6 @@ const MenuMobileComponent: FC<Props> = ({ links }) => {
       <nav
         style={{ display: dropdownVisible ? 'flex' : 'none' }}
         css={DropdownMenu}
-        onMouseLeave={() => setDropdownVisible(false)}
       >
         <div
           key="searchbox"

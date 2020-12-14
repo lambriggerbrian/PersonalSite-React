@@ -9,7 +9,23 @@ export const HomePage: FC = () => {
   return (
     <Page>
       <Section>
-        <img src={process.env.PUBLIC_URL + '/gudetama.jpg'} />
+        <div
+          css={css`
+            width: 75%;
+            text-align: justify;
+            text-justify: inter-word;
+          `}
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
       </Section>
       <Section id="about" title="About Me">
         <SpacerDiv>This forces scroll space</SpacerDiv>
@@ -35,9 +51,6 @@ export const HomePage: FC = () => {
         <ul>
           <li>
             <span>Professional Email: lambrigger.brian@gmail.com</span>
-          </li>
-          <li>
-            <span>Personal/Hobby Email: sunsh1n3xb34r@gmail.com</span>
           </li>
           <li>
             <span>Github: lambriggerbrian</span>

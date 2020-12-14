@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-const viewportContext = React.createContext({
+const responsiveContext = React.createContext({
   width: 1920,
   height: 1080,
   useMobile: () => window.innerWidth < 720,
@@ -8,7 +8,7 @@ const viewportContext = React.createContext({
 
 const minSize = 720;
 
-export const ViewportProvider: FC = ({ children }) => {
+export const ResponsiveProvider: FC = ({ children }) => {
   const [width, setWidth] = React.useState(window.innerWidth);
   const [height, setHeight] = React.useState(window.innerHeight);
 
@@ -25,13 +25,13 @@ export const ViewportProvider: FC = ({ children }) => {
   });
 
   return (
-    <viewportContext.Provider value={{ width, height, useMobile }}>
+    <responsiveContext.Provider value={{ width, height, useMobile }}>
       {children}
-    </viewportContext.Provider>
+    </responsiveContext.Provider>
   );
 };
 
-export const useViewport = () => {
-  const { width, height, useMobile } = React.useContext(viewportContext);
+export const useResponsive = () => {
+  const { width, height, useMobile } = React.useContext(responsiveContext);
   return { width, height, useMobile };
 };

@@ -10,7 +10,6 @@ export const Logo = () => {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: black;
         width: 10vmin;
         max-height: 100%;
         max-width: 100%;

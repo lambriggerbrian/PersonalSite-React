@@ -1,25 +1,28 @@
 /** @jsxImportSource @emotion/react */
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { css } from '@emotion/core';
-import { Menu } from './Menu';
-import manifest from '../manifest.json';
 import '../App.css';
 import {
+  CenterFlexCol,
   CenterFlexRow,
   HeaderFont,
   LeftFlexCol,
   LeftFlexRow,
   RightFlexRow,
 } from '../Styles';
+import manifest from '../manifest.json';
+import { SocialLinks } from './SocialLinks';
+import { LambLogoIcon, MenuIcon } from './Icons';
+import { Menu } from './Menu';
 
 const HeaderStyle = css`
   /** For Mobile */
-  background-color: #5d2b906b;
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  height: 10%;
+  height: 10vh;
+  z-index: 0;
 
   /** For Desktop*/
   @media (min-width: 768px) {
@@ -28,93 +31,79 @@ const HeaderStyle = css`
 
 const DivStyle = css`
   /** For Mobile */
+  position: absolute;
+  left: 10px;
+  right: 10px;
   display: flex;
   flex-flow: row nowrap;
   align-items: stretch;
   justify-content: space-between;
-  width: 100%;
-  max-width: 100vw;
   height: 100%;
+  z-index: 1;
 
   /** For Desktop */
   @media (min-width: 768px) {
+    left: 10px;
+    right: 10px;
   }
 `;
 
 const linkData = manifest.shortcuts;
 
 export const Header: FC = () => {
+  const [hideNav, setHideNav] = useState(true);
+  const toggleNav = () => setHideNav(!hideNav);
   return (
     <div id="Header" css={HeaderStyle}>
       <div css={DivStyle}>
-        <LeftColumn />
-        <CenterColumn />
-        <RightColumn />
+        <LeftFlexRow id="HeaderLeft">
+          <div
+            onClick={toggleNav}
+            style={{ height: '100%', cursor: 'pointer' }}
+          >
+            <MenuIcon />
+          </div>
+          <div
+            css={css`
+              display: none;
+              padding-left: 10px;
+              @media (min-width: 768px) {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: left;
+                align-items: stretch;
+              }
+            `}
+          >
+            <a href="/" css={HeaderFont}>
+              Brian Lambrigger
+            </a>
+            <span
+              css={css`
+                ${HeaderFont}
+                margin-left: 7vw;
+                color: #146794;
+              `}
+              // eslint-disable-next-line react/jsx-no-comment-textnodes
+            >
+              //Programmer & IT Professional
+            </span>
+          </div>
+        </LeftFlexRow>
+        <RightFlexRow id="HeaderRight">
+          <div style={{ height: '100%' }}>
+            <SocialLinks />
+          </div>
+        </RightFlexRow>
       </div>
-    </div>
-  );
-};
-
-const LeftColumn: FC = () => {
-  return (
-    <LeftFlexRow
-      id="HeaderLeft"
-      css={css`
-        padding-left: 0px;
-        @media (min-width: 768px) {
-          padding-left: 10px;
-        }
-      `}
-    >
-      <div
-        css={css`
-          background-color: white;
-          width: 70px;
-          height: 100%;
-        `}
-      >
-        Logo
-      </div>
-      <LeftFlexCol
-        css={css`
-          justify-content: center;
-          padding-left: 10px;
-        `}
-      >
-        <a
-          href="/"
-          css={css`
-            ${HeaderFont}
-            @media (min-width: 768px) {
-              font-size: 2em;
-            }
-          `}
-        >
-          Brian Lambrigger
+      <CenterFlexRow id="LogoDiv" style={{ height: '100%' }}>
+        <a href="/" style={{ height: '100%', zIndex: 2 }}>
+          <LambLogoIcon />
         </a>
-        <span
-          css={css`
-            ${HeaderFont}
-            margin-left: 7vw;
-            color: #146794;
-          `}
-          // eslint-disable-next-line react/jsx-no-comment-textnodes
-        >
-          //Programmer & IT Professional
-        </span>
-      </LeftFlexCol>
-    </LeftFlexRow>
-  );
-};
-
-const CenterColumn: FC = () => {
-  return <CenterFlexRow id="HeaderCenter"></CenterFlexRow>;
-};
-
-const RightColumn: FC = () => {
-  return (
-    <RightFlexRow id="HeaderRight">
-      <Menu links={linkData} />
-    </RightFlexRow>
+      </CenterFlexRow>
+      <CenterFlexCol style={{ display: hideNav ? 'none' : 'block' }}>
+        <Menu links={linkData} />
+      </CenterFlexCol>
+    </div>
   );
 };

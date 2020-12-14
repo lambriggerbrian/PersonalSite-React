@@ -64,6 +64,20 @@ export const SlideUpDiv = styled.div`
   }
 `;
 
+export const SlideDownDiv = styled.div`
+  animation-name: slideDown;
+  animation-duration: 0.5s;
+
+  @keyframes slideDown {
+    0% {
+      top: -100%;
+    }
+    100% {
+      top: 0;
+    }
+  }
+`;
+
 export const LeftFlexRow = styled.div`
   display: flex;
   flex-flow: row nowrap;
@@ -81,7 +95,7 @@ export const CenterFlexRow = styled.div`
 export const RightFlexRow = styled.div`
   display: flex;
   flex-flow: row-reverse nowrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 `;
 
@@ -95,7 +109,6 @@ export const LeftFlexCol = styled.div`
 export const CenterFlexCol = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  flex-grow: 2;
   justify-content: center;
   align-items: stretch;
 `;

@@ -9,7 +9,7 @@ interface Props {
 
 export const Section: FC<Props> = ({ children, title, id }) => {
   return (
-    <div id={'Section-' + id}>
+    <div id={id}>
       <div
         css={css`
           display: flex;
@@ -20,11 +20,18 @@ export const Section: FC<Props> = ({ children, title, id }) => {
           color: white;
         `}
       >
-        <div id={id}></div>
-        <div>
-          <span>{title}</span>
+        <span>{title}</span>
+        <div
+          css={css`
+            padding: 5vh 5vw;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+          `}
+        >
+          {children}
         </div>
-        <div>{children}</div>
       </div>
     </div>
   );

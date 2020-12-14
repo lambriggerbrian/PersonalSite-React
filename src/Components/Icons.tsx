@@ -1,42 +1,84 @@
 /** @jsxImportSource @emotion/react */
-import React from 'react';
+import React, { FC } from 'react';
 import { css } from '@emotion/core';
-import { BiMenu } from 'react-icons/bi';
-import { FaArrowCircleUp } from 'react-icons/fa';
 
-export const MenuIcon = () => (
-  <div
-    css={css`
-      height: inherit;
-      width: inherit;
-      min-width: 70px;
-    `}
-  >
-    <BiMenu
-      css={css`
-        height: 100%;
-        width: 100%;
-      `}
-      size="100%"
-      color="white"
-    />
-  </div>
-);
+const IconDivStyle = css`
+  width: inherit;
+  height: inherit;
+  max-width: 100%;
+  max-height: 100%;
+  text-align: center;
+`;
 
-export const ScrollArrowIcon = () => (
-  <div
-    css={css`
-      height: inherit;
-      width: inherit;
-      min-width: 40px;
-    `}
-  >
-    <FaArrowCircleUp
-      css={css`
-        width: 100%;
-        height: 100%;
-      `}
-      size="100%"
-    />
-  </div>
-);
+interface IconOptions {
+  width?: string;
+  height?: string;
+}
+
+interface IconProps {
+  src: string;
+  iconOptions: IconOptions;
+}
+
+interface Props {
+  iconOptions?: IconOptions;
+}
+
+const handleOpts = (iconOptions?: IconOptions) => {
+  return Object.assign(
+    {
+      width: undefined,
+      height: undefined,
+    },
+    iconOptions,
+  );
+};
+
+const Icon: FC<IconProps> = ({ src, iconOptions }) => {
+  const { width, height } = iconOptions;
+  const style = css`
+    ${width ? 'width: ' + width : ''}
+    ${height ? 'height' + height : ''}
+  `;
+  return (
+    <div css={IconDivStyle}>
+      <img src={src} alt="Menu Icon" className="icon" css={style} />
+    </div>
+  );
+};
+
+export const MenuIcon: FC<Props> = ({ iconOptions }) => {
+  const icon = `${process.env.PUBLIC_URL + 'icons8-menu-96.png'}`;
+  const opts = handleOpts(iconOptions);
+  return <Icon src={icon} iconOptions={opts} />;
+};
+
+export const ScrollArrowIcon: FC<Props> = ({ iconOptions }) => {
+  const icon = `${process.env.PUBLIC_URL + 'icons8-sort-up-96.png'}`;
+  const opts = handleOpts(iconOptions);
+  return <Icon src={icon} iconOptions={opts} />;
+};
+
+export const LambLogoIcon: FC<Props> = ({ iconOptions }) => {
+  const icon = `${process.env.PUBLIC_URL + 'icons8-lamb-96.png'}`;
+  const opts = handleOpts(iconOptions);
+  return <Icon src={icon} iconOptions={opts} />;
+};
+
+export const GithubIcon: FC<Props> = ({ iconOptions }) => {
+  const icon = `${process.env.PUBLIC_URL + 'icons8-github-96.png'}`;
+  const opts = handleOpts(iconOptions);
+  return <Icon src={icon} iconOptions={opts} />;
+};
+
+export const EmailIcon: FC<Props> = ({ iconOptions }) => {
+  const icon = `${process.env.PUBLIC_URL + 'icons8-email-sign-96.png'}`;
+  const opts = handleOpts(iconOptions);
+  return <Icon src={icon} iconOptions={opts} />;
+};
+
+export const LinkedInIcon: FC<Props> = ({ iconOptions }) => {
+  const icon = `${process.env.PUBLIC_URL + 'icons8-linkedin-circled-96.png'}`;
+  const opts = handleOpts(iconOptions);
+  return <Icon src={icon} iconOptions={opts} />;
+};

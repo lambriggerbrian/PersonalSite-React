@@ -3,7 +3,6 @@ import { css } from '@emotion/core';
 import React, { FC } from 'react';
 import { Header } from '../Components/Header';
 import { ScrollArrow } from '../Components/ScrollArrow';
-import { useWindowLocation } from '../Components/WindowLocation';
 import {
   CenterFlexCol,
   CenterFlexRow,
@@ -11,20 +10,24 @@ import {
   RightFlexCol,
 } from '../Styles';
 
-export const Page: FC = ({ children }) => {
+interface Props {
+  leftSidebarContent?: React.ReactNode;
+  rightSidebarContent?: React.ReactNode;
+}
+
+export const Page: FC<Props> = ({
+  children,
+  leftSidebarContent,
+  rightSidebarContent,
+}) => {
   return (
     <div
       id="PageDiv"
       css={css`
         position: absolute;
+        z-index: -666;
         width: 100%;
-        max-width: 100vw;
         height: 100%;
-        background: linear-gradient(
-          0deg,
-          rgba(17, 15, 18, 1) 53%,
-          rgba(21, 53, 82, 1) 100%
-        );
       `}
     >
       <Header />
@@ -38,9 +41,23 @@ export const Page: FC = ({ children }) => {
           max-width: 100vw;
         `}
       >
-        {/* <LeftFlexCol id="leftColumn"></LeftFlexCol> */}
-        <CenterFlexCol id="centerColumn"> {children}</CenterFlexCol>
-        {/* <RightFlexCol id="rightColumn"></RightFlexCol> */}
+        <LeftFlexCol
+          id="LeftColumn"
+          css={css`
+            min-width: 10vw;
+          `}
+        >
+          {leftSidebarContent}
+        </LeftFlexCol>
+        <CenterFlexCol id="CenterColumn">{children}</CenterFlexCol>
+        <RightFlexCol
+          id="RightColumn"
+          css={css`
+            min-width: 10vw;
+          `}
+        >
+          {rightSidebarContent}
+        </RightFlexCol>
       </CenterFlexRow>
 
       <ScrollArrow />

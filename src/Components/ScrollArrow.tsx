@@ -2,7 +2,7 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { ScrollArrowIcon } from './Icons';
-import { SlideUpDiv } from '../Styles';
+import { CenterFlexRow, SlideUpDiv } from '../Styles';
 import { useWindowLocation } from './WindowLocation';
 
 export const ScrollArrow = () => {
@@ -18,27 +18,23 @@ export const ScrollArrow = () => {
       css={css`
         position: sticky;
         bottom: 0;
-        margin-top: 10vh;
+        margin-top: 7vh;
         background-color: white;
         width: 100%;
         max-width: 100vw;
         min-height: 40px;
         height: 7vh;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
         cursor: pointer;
       `}
     >
-      <div
+      <CenterFlexRow
         css={css`
           width: 100%;
           height: 100%;
         `}
       >
         <ScrollArrowIcon />
-      </div>
+      </CenterFlexRow>
     </SlideUpDiv>
   );
 };

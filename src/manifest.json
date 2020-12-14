@@ -20,8 +20,8 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#282c34",
+  "theme_color": "#161515",
+  "background_color": "#161515",
   "shortcuts": [
     {
       "name": "Homepage",
