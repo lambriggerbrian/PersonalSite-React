@@ -6,7 +6,6 @@ import {
   CenterFlexCol,
   CenterFlexRow,
   HeaderFont,
-  LeftFlexCol,
   LeftFlexRow,
   RightFlexRow,
 } from '../Styles';
@@ -23,6 +22,12 @@ const HeaderStyle = css`
   width: 100%;
   height: 10vh;
   z-index: 0;
+  background: rgb(17, 15, 18);
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 18, 1) 53%,
+    rgba(58, 58, 58, 0.5) 100%
+  );
 
   /** For Desktop*/
   @media (min-width: 768px) {
@@ -51,18 +56,10 @@ const DivStyle = css`
 const linkData = manifest.shortcuts;
 
 export const Header: FC = () => {
-  const [hideNav, setHideNav] = useState(true);
-  const toggleNav = () => setHideNav(!hideNav);
   return (
     <div id="Header" css={HeaderStyle}>
       <div css={DivStyle}>
         <LeftFlexRow id="HeaderLeft">
-          <div
-            onClick={toggleNav}
-            style={{ height: '100%', cursor: 'pointer' }}
-          >
-            <MenuIcon />
-          </div>
           <div
             css={css`
               display: none;
@@ -101,9 +98,6 @@ export const Header: FC = () => {
           <LambLogoIcon />
         </a>
       </CenterFlexRow>
-      <CenterFlexCol style={{ display: hideNav ? 'none' : 'block' }}>
-        <Menu links={linkData} />
-      </CenterFlexCol>
     </div>
   );
 };

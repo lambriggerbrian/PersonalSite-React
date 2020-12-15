@@ -31,14 +31,7 @@
       "icons": [{"src": "logo192.png", "sizes": "192x192"}]
     },
     {
-      "name": "About Brian",
-      "short_name": "About",
-      "description": "About me",
-      "url": "#about",
-      "icons": [{"src": "logo192.png", "sizes": "192x192"}]
-    },
-    {
-      "name": "Projects Index",
+      "name": "Projects",
       "short_name": "Projects",
       "description": "My projects of past, present, and future",
       "url": "#projects",
@@ -49,20 +42,6 @@
       "short_name": "Blog",
       "description": "The world according to my open chrome tabs",
       "url": "#blog",
-      "icons": [{"src": "logo192.png", "sizes": "192x192"}]
-    },
-    {
-      "name": "Contact Information",
-      "short_name": "Contact",
-      "description": "Let's get in touch",
-      "url": "#contact",
-      "icons": [{"src": "logo192.png", "sizes": "192x192"}]
-    },
-    {
-      "name": "Hiring Information",
-      "short_name": "Hire Me",
-      "description": "Employment, freelance, and contract inquiries",
-      "url": "#hire-me",
       "icons": [{"src": "logo192.png", "sizes": "192x192"}]
     }
   ]

@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { css } from '@emotion/core';
-import { MenuIcon } from './Icons';
-import { LinkTextStyle } from '../Styles';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 interface LinkData {
@@ -21,12 +19,12 @@ interface Props {
 const DropdownMenu = css`
   background-color: #ffffff;
   position: absolute;
-  left: auto;
-  right: 0;
-  width: 40vw;
-  height: 25vh;
+  left: 0vw;
   display: flex;
   flex-flow: column nowrap;
+  @media (min-width: 768px) {
+    min-width: 10vw;
+  }
 `;
 
 const DropdownElement = css`
@@ -47,79 +45,18 @@ export const Menu: FC<Props> = ({ links }) => {
 };
 
 const MenuMobileComponent: FC<Props> = ({ links }) => {
-  const [dropdownVisible, setDropdownVisible] = useState(false);
-  const toggleDropdown = () => setDropdownVisible(!dropdownVisible);
   return (
-    <div
-      onClick={toggleDropdown}
-      css={css`
-        min-width: 70px;
-        width: 5vw;
-        height: 100%;
-        padding-right: 10px;
-        cursor: pointer;
-      `}
-    >
-      <MenuIcon />
-      <nav
-        style={{ display: dropdownVisible ? 'flex' : 'none' }}
-        css={DropdownMenu}
-      >
-        <div
-          key="searchbox"
-          css={css`
-            flex-grow: 2;
-            align-items: center;
-            ${DropdownElement}
-          `}
-        >
-          <span>SearchBox</span>
-        </div>
-        {links.map((item: LinkData, index: number) => (
-          <div key={index}>
-            {/* <a href={item.url} css={DropdownElement}>
+    <nav css={DropdownMenu}>
+      {links.map((item: LinkData, index: number) => (
+        <div key={index}>
+          {/* <a href={item.url} css={DropdownElement}>
               {item.short_name.toUpperCase()}
             </a> */}
-            <AnchorLink href={item.url} css={DropdownElement}>
-              {item.short_name.toUpperCase()}
-            </AnchorLink>
-          </div>
-        ))}
-      </nav>
-    </div>
-  );
-};
-
-const DesktopComponent: FC<Props> = ({ links }) => {
-  return (
-    <div
-      css={css`
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        align-items: stretch;
-        padding: 10px;
-        width: 70%;
-      `}
-    >
-      {links.map((item: LinkData, index: number) => (
-        <div
-          key={index}
-          css={css`
-            background-color: darkblue;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: center;
-            align-items: center;
-            width: 10vmin;
-          `}
-        >
-          {/* <a href={item.url}>{item.short_name.substring(0, 1).toUpperCase()}</a> */}
-          <a href={item.url} css={LinkTextStyle}>
-            {item.short_name}
-          </a>
+          <AnchorLink href={item.url} css={DropdownElement}>
+            {item.short_name.toUpperCase()}
+          </AnchorLink>
         </div>
       ))}
-    </div>
+    </nav>
   );
 };

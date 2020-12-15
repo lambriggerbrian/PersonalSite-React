@@ -15,6 +15,14 @@ interface Props {
   rightSidebarContent?: React.ReactNode;
 }
 
+const SidebarStyle = css`
+  min-width: 5vw;
+
+  @media (min-width: 768px) {
+    min-width: 10vw;
+  }
+`;
+
 export const Page: FC<Props> = ({
   children,
   leftSidebarContent,
@@ -35,27 +43,17 @@ export const Page: FC<Props> = ({
         id="body"
         css={css`
           justify-content: space-between;
-          padding-top: 10vh;
+          padding-top: 5vh;
           padding-bottom: 10vh;
           width: 100%;
           max-width: 100vw;
         `}
       >
-        <LeftFlexCol
-          id="LeftColumn"
-          css={css`
-            min-width: 10vw;
-          `}
-        >
+        <LeftFlexCol id="LeftColumn" css={SidebarStyle}>
           {leftSidebarContent}
         </LeftFlexCol>
         <CenterFlexCol id="CenterColumn">{children}</CenterFlexCol>
-        <RightFlexCol
-          id="RightColumn"
-          css={css`
-            min-width: 10vw;
-          `}
-        >
+        <RightFlexCol id="RightColumn" css={SidebarStyle}>
           {rightSidebarContent}
         </RightFlexCol>
       </CenterFlexRow>

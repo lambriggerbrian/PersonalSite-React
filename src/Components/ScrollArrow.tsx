@@ -19,12 +19,17 @@ export const ScrollArrow = () => {
         position: sticky;
         bottom: 0;
         margin-top: 7vh;
-        background-color: white;
         width: 100%;
         max-width: 100vw;
         min-height: 40px;
         height: 7vh;
         cursor: pointer;
+        background: rgb(17, 15, 18);
+        background: linear-gradient(
+          0deg,
+          rgba(17, 18, 18, 1) 53%,
+          rgba(58, 58, 58, 0.5) 100%
+        );
       `}
     >
       <CenterFlexRow
