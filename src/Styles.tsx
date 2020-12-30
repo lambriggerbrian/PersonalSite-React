@@ -35,9 +35,16 @@ export const GridDiv4x4 = styled.div`
 
   @media (min-width: 768px) {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(8, auto);
+    gap: 5px 5px;
+  }
+
+  @media (min-width: 1075px) {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto auto auto auto;
-    grid-gap: 10px 10px;
+    gap: 10px 10px;
   }
 `;
 

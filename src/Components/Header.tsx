@@ -1,28 +1,25 @@
 /** @jsxImportSource @emotion/react */
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { css } from '@emotion/core';
 import '../App.css';
 import {
-  CenterFlexCol,
   CenterFlexRow,
   HeaderFont,
   LeftFlexRow,
   RightFlexRow,
 } from '../Styles';
-import manifest from '../manifest.json';
 import { SocialLinks } from './SocialLinks';
-import { LambLogoIcon, MenuIcon } from './Icons';
-import { Menu } from './Menu';
+import { LambLogoIcon } from './Icons';
 
 const HeaderStyle = css`
   /** For Mobile */
-  position: sticky;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 10vh;
-  z-index: 0;
-  background: rgb(17, 15, 18);
+  height: 9vh;
+  z-index: 666;
+  background: rgb(18, 18, 18);
   background: linear-gradient(
     180deg,
     rgba(18, 18, 18, 1) 53%,
@@ -31,6 +28,7 @@ const HeaderStyle = css`
 
   /** For Desktop*/
   @media (min-width: 768px) {
+    height: 7vh;
   }
 `;
 
@@ -44,7 +42,7 @@ const DivStyle = css`
   align-items: stretch;
   justify-content: space-between;
   height: 100%;
-  z-index: 1;
+  z-index: 667;
 
   /** For Desktop */
   @media (min-width: 768px) {
@@ -53,14 +51,17 @@ const DivStyle = css`
   }
 `;
 
-const linkData = manifest.shortcuts;
-
 export const Header: FC = () => {
   return (
     <div id="Header" css={HeaderStyle}>
       <div css={DivStyle}>
         <LeftFlexRow id="HeaderLeft">
-          <div
+          <CenterFlexRow id="LogoDiv" style={{ height: '100%' }}>
+            <a href="/" style={{ height: '100%', zIndex: 2 }}>
+              <LambLogoIcon />
+            </a>
+          </CenterFlexRow>
+          {/* <div
             css={css`
               display: none;
               padding-left: 10px;
@@ -85,7 +86,7 @@ export const Header: FC = () => {
             >
               //Programmer & IT Professional
             </span>
-          </div>
+          </div> */}
         </LeftFlexRow>
         <RightFlexRow id="HeaderRight">
           <div style={{ height: '100%' }}>
@@ -93,11 +94,6 @@ export const Header: FC = () => {
           </div>
         </RightFlexRow>
       </div>
-      <CenterFlexRow id="LogoDiv" style={{ height: '100%' }}>
-        <a href="/" style={{ height: '100%', zIndex: 2 }}>
-          <LambLogoIcon />
-        </a>
-      </CenterFlexRow>
     </div>
   );
 };

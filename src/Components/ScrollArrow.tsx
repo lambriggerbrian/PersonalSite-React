@@ -22,7 +22,7 @@ export const ScrollArrow = () => {
         width: 100%;
         max-width: 100vw;
         min-height: 40px;
-        height: 7vh;
+        height: 5vh;
         cursor: pointer;
         background: rgb(17, 15, 18);
         background: linear-gradient(

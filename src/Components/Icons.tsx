@@ -42,7 +42,7 @@ const Icon: FC<IconProps> = ({ src, iconOptions }) => {
   `;
   return (
     <div css={IconDivStyle}>
-      <img src={src} alt="Menu Icon" className="icon" css={style} />
+      <img src={src} alt="Menu Icon" css={style} />
     </div>
   );
 };

@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import React, { FC } from 'react';
 import { css } from '@emotion/core';
-import { GithubIcon, LinkedInIcon } from './Icons';
+import { EmailIcon, GithubIcon, LinkedInIcon } from './Icons';
 import styled from '@emotion/styled';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 interface Props {
   vertical?: Boolean;
@@ -50,6 +51,17 @@ export const SocialLinks: FC<Props> = ({ vertical = false }) => {
       id="SocialLinks"
       css={vertical ? VerticalDivStyle : HorizontalDivStyle}
     >
+      <div id="EmailLink" css={style}>
+        <AnchorLink
+          href="#contact"
+          css={css`
+            width: 100%;
+            height: 100%;
+          `}
+        >
+          <EmailIcon />
+        </AnchorLink>
+      </div>
       <div id="GithubLink" css={style}>
         <Link
           href="https://github.com/lambriggerbrian"
@@ -59,15 +71,6 @@ export const SocialLinks: FC<Props> = ({ vertical = false }) => {
           <GithubIcon />
         </Link>
       </div>
-      {/* <div id="EmailLink" css={style}>
-        <Link
-          href="mailto:lambrigger.brian@gmail.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <EmailIcon />
-        </Link>
-      </div> */}
       <div id="LinkedInLink" css={style}>
         <Link
           href="https://www.linkedin.com/in/brian-lambrigger-81539810b/"
