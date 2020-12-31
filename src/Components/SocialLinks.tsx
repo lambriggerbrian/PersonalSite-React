@@ -3,7 +3,6 @@ import React, { FC } from 'react';
 import { css } from '@emotion/core';
 import { EmailIcon, GithubIcon, LinkedInIcon } from './Icons';
 import styled from '@emotion/styled';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 interface Props {
   vertical?: Boolean;
@@ -52,7 +51,7 @@ export const SocialLinks: FC<Props> = ({ vertical = false }) => {
       css={vertical ? VerticalDivStyle : HorizontalDivStyle}
     >
       <div id="EmailLink" css={style}>
-        <AnchorLink
+        <Link
           href="mailto:lambrigger.brian@gmail.com?subject=Professional Inquiry"
           css={css`
             width: 100%;
@@ -60,7 +59,7 @@ export const SocialLinks: FC<Props> = ({ vertical = false }) => {
           `}
         >
           <EmailIcon />
-        </AnchorLink>
+        </Link>
       </div>
       <div id="GithubLink" css={style}>
         <Link
