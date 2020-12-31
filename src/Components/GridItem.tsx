@@ -39,7 +39,7 @@ export const GridItem: FC<Props> = ({
   return (
     <div css={GridItemStyle} onClick={() => setModal(children)}>
       <img
-        src={image ? image : process.env.PUBLIC_URL + 'Images/gudetama.jpg'}
+        src={image ? image : process.env.PUBLIC_URL + 'images/gudetama.jpg'}
         alt={alt}
         css={css`
           object-fit: ${styled};

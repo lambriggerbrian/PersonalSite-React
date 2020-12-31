@@ -67,17 +67,17 @@ export const HomePage: FC = () => {
       <Section id="projects" title="Projects">
         <GridDiv4x4>
           <GridItem
-            image={process.env.PUBLIC_URL + 'Images/gudetama.jpg'}
+            image={process.env.PUBLIC_URL + 'images/gudetama.jpg'}
             alt=""
             title="This Site"
           ></GridItem>
           <GridItem
-            image={process.env.PUBLIC_URL + 'Images/gudetama.jpg'}
+            image={process.env.PUBLIC_URL + 'images/gudetama.jpg'}
             alt=""
             title="Entity Component System"
           ></GridItem>
           <GridItem
-            image={process.env.PUBLIC_URL + 'Images/gudetama.jpg'}
+            image={process.env.PUBLIC_URL + 'images/gudetama.jpg'}
             alt=""
             title="Metaballs"
           />
@@ -88,12 +88,12 @@ export const HomePage: FC = () => {
             styled="contain"
           />
           <GridItem
-            image={process.env.PUBLIC_URL + 'Images/roc.png'}
+            image={process.env.PUBLIC_URL + 'images/roc.png'}
             alt=""
             title="Rite of Conquest"
           />
           <GridItem
-            image={process.env.PUBLIC_URL + 'Images/Imageserver.png'}
+            image={process.env.PUBLIC_URL + 'images/imageserver.png'}
             alt=""
             title="ImageServer"
           />
@@ -102,7 +102,7 @@ export const HomePage: FC = () => {
       <Section id="publications" title="Publications">
         <GridDiv4x4>
           <GridItem
-            image={process.env.PUBLIC_URL + 'Images/hyped.png'}
+            image={process.env.PUBLIC_URL + 'images/hyped.png'}
             alt=""
             title="HyPED"
           />
