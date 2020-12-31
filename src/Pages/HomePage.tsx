@@ -21,7 +21,7 @@ export const HomePage: FC = () => {
         >
           <div
             css={css`
-              margin: 20% 0px 25% 0px;
+              margin: 35vh 0px 35vh 0px;
               text-align: left;
 
               @media (min-width: 768px) {
