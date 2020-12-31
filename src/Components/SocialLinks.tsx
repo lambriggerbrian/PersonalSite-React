@@ -53,7 +53,7 @@ export const SocialLinks: FC<Props> = ({ vertical = false }) => {
     >
       <div id="EmailLink" css={style}>
         <AnchorLink
-          href="#contact"
+          href="mailto:lambrigger.brian@gmail.com?subject=Professional Inquiry"
           css={css`
             width: 100%;
             height: 100%;

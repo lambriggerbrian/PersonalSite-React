@@ -2,12 +2,7 @@
 import React, { FC } from 'react';
 import { css } from '@emotion/core';
 import '../App.css';
-import {
-  CenterFlexRow,
-  HeaderFont,
-  LeftFlexRow,
-  RightFlexRow,
-} from '../Styles';
+import { CenterFlexRow, LeftFlexRow, RightFlexRow } from '../Styles';
 import { SocialLinks } from './SocialLinks';
 import { LambLogoIcon } from './Icons';
 
@@ -61,32 +56,6 @@ export const Header: FC = () => {
               <LambLogoIcon />
             </a>
           </CenterFlexRow>
-          {/* <div
-            css={css`
-              display: none;
-              padding-left: 10px;
-              @media (min-width: 768px) {
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: left;
-                align-items: stretch;
-              }
-            `}
-          >
-            <a href="/" css={HeaderFont}>
-              Brian Lambrigger
-            </a>
-            <span
-              css={css`
-                ${HeaderFont}
-                margin-left: 7vw;
-                color: #146794;
-              `}
-              // eslint-disable-next-line react/jsx-no-comment-textnodes
-            >
-              //Programmer & IT Professional
-            </span>
-          </div> */}
         </LeftFlexRow>
         <RightFlexRow id="HeaderRight">
           <div style={{ height: '100%' }}>
