@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useModal } from './ModalProvider';
@@ -39,7 +39,7 @@ export const GridItem: FC<Props> = ({
   return (
     <div css={GridItemStyle} onClick={() => setModal(children)}>
       <img
-        src={image ? image : process.env.PUBLIC_URL + 'gudetama.jpg'}
+        src={image ? image : process.env.PUBLIC_URL + 'Images/gudetama.jpg'}
         alt={alt}
         css={css`
           object-fit: ${styled};
