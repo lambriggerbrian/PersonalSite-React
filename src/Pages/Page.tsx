@@ -2,15 +2,14 @@
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
-import { Header } from '../Components/Header';
-import { ModalWindow } from '../Components/ModalWindow';
-import { ScrollArrow } from '../Components/ScrollArrow';
+import { Header } from '../Components/Layout/Header';
+import { ScrollArrow } from '../Components/Elements/ScrollArrow';
 import {
   CenterFlexCol,
   CenterFlexRow,
   LeftFlexCol,
   RightFlexCol,
-} from '../Styles';
+} from '../Components/Elements/Styles';
 
 interface Props {
   leftSidebarContent?: React.ReactNode;

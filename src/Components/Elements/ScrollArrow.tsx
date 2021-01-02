@@ -2,8 +2,8 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { ScrollArrowIcon } from './Icons';
-import { CenterFlexRow, SlideUpDiv } from '../Styles';
-import { useWindowLocation } from './WindowLocation';
+import { CenterFlexRow, SlideUpDiv } from './Styles';
+import { useWindowLocation } from '../Contexts/WindowLocationProvider';
 
 export const ScrollArrow = () => {
   const { yOffsetBreak } = useWindowLocation();

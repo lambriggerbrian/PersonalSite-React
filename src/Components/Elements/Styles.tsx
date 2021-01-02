@@ -16,6 +16,10 @@ export const LinkTextStyle = css`
   text-decoration: none;
 `;
 
+export const LinkTextSpan = styled.span`
+  ${LinkTextStyle}
+`;
+
 export const PlaceholderDiv = styled.div`
   background-color: green;
   min-width: 40px;

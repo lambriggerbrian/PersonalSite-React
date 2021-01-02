@@ -1,10 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import React, { FC } from 'react';
 import { css } from '@emotion/core';
-import '../App.css';
-import { CenterFlexRow, LeftFlexRow, RightFlexRow } from '../Styles';
-import { SocialLinks } from './SocialLinks';
-import { LambLogoIcon } from './Icons';
+import { CenterFlexRow, LeftFlexRow, RightFlexRow } from '../Elements/Styles';
+import { SocialLinks } from '../Elements/SocialLinks';
+import { LambLogoIcon } from '../Elements/Icons';
 
 const HeaderStyle = css`
   /** For Mobile */

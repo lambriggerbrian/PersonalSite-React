@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
 import { css } from '@emotion/core';
-import { LinkTextStyle } from '../Styles';
+import { LinkTextStyle } from './Styles';
 
 export const Logo = () => {
   return (

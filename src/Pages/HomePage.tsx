@@ -1,10 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import React, { FC } from 'react';
 import { css } from '@emotion/core';
-import { Section } from '../Components/Section';
-import { CenterFlexCol, GridDiv4x4 } from '../Styles';
+import { Section } from '../Components/Layout/Section';
+import { CenterFlexCol, GridDiv4x4 } from '../Components/Elements/Styles';
 import { Page } from './Page';
-import { GridItem } from '../Components/GridItem';
+import { GridItem } from '../Components/Elements/GridItem';
+import { ThisSiteItemData } from '../Data/ThisSiteItem';
 
 export const HomePage: FC = () => {
   return (
@@ -66,12 +67,8 @@ export const HomePage: FC = () => {
       </Section>
       <Section id="projects" title="Projects">
         <GridDiv4x4>
-          <GridItem
-            image={process.env.PUBLIC_URL + 'images/gudetama.jpg'}
-            alt=""
-            title="This Site"
-          ></GridItem>
-          <GridItem
+          <GridItem data={ThisSiteItemData}></GridItem>
+          {/* <GridItem
             image={process.env.PUBLIC_URL + 'images/gudetama.jpg'}
             alt=""
             title="Entity Component System"
@@ -96,16 +93,16 @@ export const HomePage: FC = () => {
             image={process.env.PUBLIC_URL + 'images/imageserver.png'}
             alt=""
             title="ImageServer"
-          />
+          /> */}
         </GridDiv4x4>
       </Section>
       <Section id="publications" title="Publications">
         <GridDiv4x4>
-          <GridItem
+          {/* <GridItem
             image={process.env.PUBLIC_URL + 'images/hyped.png'}
             alt=""
             title="HyPED"
-          />
+          /> */}
         </GridDiv4x4>
       </Section>
     </Page>

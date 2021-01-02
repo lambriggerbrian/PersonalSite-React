@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ModalWindow } from './ModalWindow';
+import { ModalWindow } from '../Elements/ModalWindow';
 
 export interface LinkData {
   text: string;

@@ -2,8 +2,8 @@
 import React from 'react';
 import './App.css';
 import { HomePage } from './Pages/HomePage';
-import { WindowLocationProvider } from './Components/WindowLocation';
-import { ModalProvider } from './Components/ModalProvider';
+import { WindowLocationProvider } from './Components/Contexts/WindowLocationProvider';
+import { ModalProvider } from './Components/Contexts/ModalProvider';
 
 function App() {
   return (
