@@ -6,6 +6,11 @@ import { CenterFlexCol, GridDiv4x4 } from '../Components/Elements/Styles';
 import { Page } from './Page';
 import { GridItem } from '../Components/Elements/GridItem';
 import { ThisSiteItemData } from '../Data/ThisSiteItem';
+import { ECSItemData } from '../Data/ECSItem';
+import { NTDDiagramsItemData } from '../Data/NTDDiagramsItem';
+import { RiteOfConquestItemData } from '../Data/RiteOfConquestItem';
+import { ImageServerItemData } from '../Data/ImageServerItem';
+import { HypedItemData } from '../Data/HypedItem';
 
 export const HomePage: FC = () => {
   return (
@@ -68,41 +73,15 @@ export const HomePage: FC = () => {
       <Section id="projects" title="Projects">
         <GridDiv4x4>
           <GridItem data={ThisSiteItemData}></GridItem>
-          {/* <GridItem
-            image={process.env.PUBLIC_URL + 'images/gudetama.jpg'}
-            alt=""
-            title="Entity Component System"
-          ></GridItem>
-          <GridItem
-            image={process.env.PUBLIC_URL + 'images/gudetama.jpg'}
-            alt=""
-            title="Metaballs"
-          />
-          <GridItem
-            image={process.env.PUBLIC_URL + 'images/ntdhome.png'}
-            alt=""
-            title="NTDDiagrams"
-            styled="contain"
-          />
-          <GridItem
-            image={process.env.PUBLIC_URL + 'images/roc.png'}
-            alt=""
-            title="Rite of Conquest"
-          />
-          <GridItem
-            image={process.env.PUBLIC_URL + 'images/imageserver.png'}
-            alt=""
-            title="ImageServer"
-          /> */}
+          <GridItem data={ECSItemData}></GridItem>
+          <GridItem data={NTDDiagramsItemData} styled="contain"></GridItem>
+          <GridItem data={RiteOfConquestItemData}></GridItem>
+          <GridItem data={ImageServerItemData}></GridItem>
         </GridDiv4x4>
       </Section>
       <Section id="publications" title="Publications">
         <GridDiv4x4>
-          {/* <GridItem
-            image={process.env.PUBLIC_URL + 'images/hyped.png'}
-            alt=""
-            title="HyPED"
-          /> */}
+          <GridItem data={HypedItemData}></GridItem>
         </GridDiv4x4>
       </Section>
     </Page>

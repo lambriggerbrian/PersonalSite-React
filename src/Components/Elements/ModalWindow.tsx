@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import React, { FC } from 'react';
+import React, { FC, useCallback, useEffect } from 'react';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useModal } from '../Contexts/ModalProvider';
-import { LinkTextStyle } from './Styles';
 
 interface Props {
   show?: boolean;
@@ -15,6 +14,28 @@ export const ModalWindow: FC<Props> = ({ children, show = true }) => {
     setModalData(null);
     toggleModal();
   };
+  const handleKeyPress = useCallback(
+    (event: KeyboardEvent) => {
+      const { key } = event;
+      switch (key) {
+        case 'Esc':
+          if (show) toggleModal();
+          break;
+        case 'Escape':
+          if (show) toggleModal();
+          break;
+        default:
+          return;
+      }
+    },
+    [show, toggleModal],
+  );
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [handleKeyPress]);
   return (
     <div css={show ? ModalDivCSS : Hide}>
       <ModalContentDiv>
