@@ -4,6 +4,7 @@ export const ThisSiteItemData: ItemData = {
   title: 'This Site',
   img_small: { src: 'logo512.png', alt: '' },
   img_large: { src: 'logo512.png', alt: '' },
+  role: 'Frontend Developer',
   links: [
     { href: '', text: 'Repo' },
     { href: '', text: 'React' },

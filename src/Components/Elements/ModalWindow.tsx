@@ -10,9 +10,15 @@ interface Props {
 
 export const ModalWindow: FC<Props> = ({ children, show = true }) => {
   const { toggleModal, setModalData } = useModal();
-  const handleClick = () => {
+  const resetModal = () => {
     setModalData(null);
     toggleModal();
+  };
+  const handleBackgroundClick = (event: React.MouseEvent) => {
+    resetModal();
+  };
+  const handleWindowClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
   };
   const handleKeyPress = useCallback(
     (event: KeyboardEvent) => {
@@ -37,10 +43,10 @@ export const ModalWindow: FC<Props> = ({ children, show = true }) => {
     };
   }, [handleKeyPress]);
   return (
-    <div css={show ? ModalDivCSS : Hide}>
-      <ModalContentDiv>
+    <div css={show ? ModalDivCSS : Hide} onClick={handleBackgroundClick}>
+      <ModalContentDiv onClick={handleWindowClick}>
         <div
-          onClick={handleClick}
+          onClick={resetModal}
           css={css`
             align-self: flex-end;
             cursor: pointer;
@@ -49,7 +55,7 @@ export const ModalWindow: FC<Props> = ({ children, show = true }) => {
             background-color: #222222;
           `}
         >
-          <span>Close X</span>
+          <span>Close &times;</span>
         </div>
         {children}
       </ModalContentDiv>
@@ -76,12 +82,11 @@ const Hide = css`
 
 const ModalContentDiv = styled.div`
   display: flex;
-  z-index: 670;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   background-color: #666666;
-  margin: 10vh auto;
+  margin: 5vh auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;

@@ -4,6 +4,7 @@ export const ECSItemData: ItemData = {
   title: 'ECS',
   img_small: { src: 'images/gudetama.jpg', alt: '' },
   img_large: { src: 'images/gudetama.jpg', alt: '' },
+  role: 'C++ & .NET C# Programmer',
   links: [
     { href: 'https://github.com/lambriggerbrian/ECSEngine', text: 'Repo' },
     { href: '', text: 'Microsoft .NET' },
@@ -16,5 +17,5 @@ export const ECSItemData: ItemData = {
   ],
   synopsis: 'Entity Component System',
   summary:
-    'A personal project of mine built in C++ and C# on .NET Core. The aim is to build a game logic system using the cache-locality of ECS. Heavily inspired by the Bitsquid Engine and the book Realtime 3D Collision Detection by Morgan Kaufmann',
+    'A personal project of mine built in C++ and C# on .NET Core. The aim is to build a game logic system using the cache-locality of an Entity Component System. Heavily inspired by the Bitsquid Engine and the book Realtime 3D Collision Detection by Morgan Kaufmann',
 };

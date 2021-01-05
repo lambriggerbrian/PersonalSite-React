@@ -59,14 +59,39 @@ export const GridItem: FC<Props> = ({
 const GridItemModalContent: FC<ContentProps> = ({ children, data }) => {
   return (
     <CenterFlexCol>
+      <h1>{data.title}</h1>
+
       {data.img_large && (
-        <img src={data.img_large.src} alt={data.img_large.alt} />
+        <img
+          src={data.img_large.src}
+          alt={data.img_large.alt}
+          css={css`
+            max-width: 300px;
+            max-height: 300px;
+            margin: 0px auto;
+          `}
+        />
       )}
+      {data.role && <h2>Role: {data.role}</h2>}
       {data.links && (
         <CenterFlexRow>
-          {data.links.map((link) => (
-            <Link href={link.href} text={link.text} />
-          ))}
+          {data.links.map((link, index) => {
+            if (index === data.links.length - 1)
+              return (
+                <Link key={'link' + index} href={link.href} text={link.text} />
+              );
+            else
+              return (
+                <React.Fragment key={'link' + index}>
+                  <Link
+                    key={'link' + index}
+                    href={link.href}
+                    text={link.text}
+                  />
+                  <span style={{ margin: '0px 1em' }}>|</span>
+                </React.Fragment>
+              );
+          })}
         </CenterFlexRow>
       )}
       {data.summary && <p>{data.summary}</p>}

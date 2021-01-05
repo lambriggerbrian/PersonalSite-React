@@ -4,6 +4,7 @@ export const ImageServerItemData: ItemData = {
   title: 'Image Server',
   img_small: { src: 'images/imageserver.png', alt: '' },
   img_large: { src: 'images/imageserver.png', alt: '' },
+  role: 'Fullstack Developer, Computer Vision Programmer, Web Designer',
   links: [
     { href: 'https://github.com/lambriggerbrian/ImageServer', text: 'Repo' },
     { href: 'http://www.web2py.com/', text: 'Web2Py' },

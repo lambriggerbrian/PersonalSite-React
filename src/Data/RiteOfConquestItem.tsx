@@ -4,6 +4,7 @@ export const RiteOfConquestItemData: ItemData = {
   title: 'Rite of Conquest',
   img_small: { src: 'images/roc.png', alt: '' },
   img_large: { src: 'images/roc.png', alt: '' },
+  role: 'Network Programmer, Unity Programmer',
   links: [
     { href: 'https://github.com/lambriggerbrian/Conquest', text: 'Repo' },
     { href: 'https://unity.com/', text: 'Unity' },

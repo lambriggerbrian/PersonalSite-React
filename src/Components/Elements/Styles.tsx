@@ -108,6 +108,7 @@ export const CenterFlexRow = styled.div`
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 
 export const RightFlexRow = styled.div`
@@ -129,6 +130,7 @@ export const CenterFlexCol = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: stretch;
+  text-align: center;
 `;
 
 export const RightFlexCol = styled.div`

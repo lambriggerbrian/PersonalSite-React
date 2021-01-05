@@ -4,6 +4,7 @@ export const NTDDiagramsItemData: ItemData = {
   title: 'NTD Diagrams',
   img_small: { src: 'images/ntdhome.png', alt: '' },
   img_large: { src: 'images/ntdmodal.png', alt: '' },
+  role: 'Fullstack Developer, Web Designer',
   links: [
     { href: '', text: 'Check it Out' },
     { href: 'https://github.com/lambriggerbrian/ntddiagrams', text: 'Repo' },

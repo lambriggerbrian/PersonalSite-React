@@ -4,6 +4,7 @@ export const HypedItemData: ItemData = {
   title: 'HyPED',
   img_small: { src: 'images/hyped.png', alt: '' },
   img_large: { src: 'images/hyped.png', alt: '' },
+  role: 'Co-Author, Python Programmer, and Engine/RRT Algorithm Programmer',
   links: [
     { href: 'https://github.com/JoeOsborn/hyped', text: 'Repo' },
     {

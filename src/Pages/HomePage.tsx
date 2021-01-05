@@ -46,7 +46,7 @@ export const HomePage: FC = () => {
           </div>
         </div>
       </Section>
-      <Section id="solutions" title="Solutions I Offer">
+      <Section id="solutions" title="Services Offered:">
         <div
           css={css`
             align-self: flex-end;
@@ -56,17 +56,14 @@ export const HomePage: FC = () => {
             text-align: left;
           `}
         >
-          <CenterFlexCol>
-            <ul>
-              <li>Web Development</li>
-              <li>Web Hosting</li>
-              <li>SEO and Accessibility Consulting</li>
-              <li>Software Development</li>
-              <li>Mobile Development</li>
-              <li>Game Design/Development</li>
-              <li>IT Consulting</li>
-              <li>Personalized Technical Solutions</li>
-            </ul>
+          <CenterFlexCol style={{ padding: '5px' }}>
+            <span>Web Development</span>
+            <span>Web Hosting</span>
+            <span>SEO and Accessibility Consulting</span>
+            <span>Software Development</span>
+            <span>Mobile Development</span>
+            <span>Game Design/Development</span>
+            <span>IT Consulting</span>
           </CenterFlexCol>
         </div>
       </Section>

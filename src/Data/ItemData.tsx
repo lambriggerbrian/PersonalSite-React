@@ -6,6 +6,7 @@ export interface ItemData {
   img_small: ImageMetadata;
   img_large: ImageMetadata;
   links: LinkData[];
+  role: string;
   synopsis: string;
   summary: string;
 }
