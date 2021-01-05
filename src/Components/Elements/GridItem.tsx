@@ -66,8 +66,8 @@ const GridItemModalContent: FC<ContentProps> = ({ children, data }) => {
           src={data.img_large.src}
           alt={data.img_large.alt}
           css={css`
-            max-width: 300px;
-            max-height: 300px;
+            max-width: ${data.img_large.maxWidth ?? '450px'};
+            max-height: ${data.img_large.maxHeight ?? '450px'};
             margin: 0px auto;
           `}
         />

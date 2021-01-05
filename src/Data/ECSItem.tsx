@@ -7,7 +7,11 @@ export const ECSItemData: ItemData = {
   role: 'C++ & .NET C# Programmer',
   links: [
     { href: 'https://github.com/lambriggerbrian/ECSEngine', text: 'Repo' },
-    { href: '', text: 'Microsoft .NET' },
+    {
+      href:
+        'https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet-framework',
+      text: 'Microsoft .NET',
+    },
     { href: 'http://bitsquid.blogspot.com/', text: 'Bitsquid Engine' },
     {
       href:

@@ -27,7 +27,7 @@ export const HomePage: FC = () => {
         >
           <div
             css={css`
-              margin: 35vh 0px 35vh 0px;
+              margin-top: 35vh;
               text-align: left;
 
               @media (min-width: 768px) {
@@ -40,13 +40,13 @@ export const HomePage: FC = () => {
             <p>
               I am a programmer, designer, and IT professional primarily working
               in web, digital games, and system administration. Sleek design and
-              clean code are my passion. I am also an avid film buff, average
-              writer, and amateur artist.
+              clean code are my passion. I am also an avid film buff, aspiring
+              writer, and hobby artist.
             </p>
           </div>
         </div>
       </Section>
-      <Section id="solutions" title="Services Offered:">
+      <Section id="solutions" title="Services Provided">
         <div
           css={css`
             align-self: flex-end;

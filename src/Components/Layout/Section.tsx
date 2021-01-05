@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React, { FC } from 'react';
-import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 
 interface Props {
   title?: string;
@@ -9,30 +9,27 @@ interface Props {
 
 export const Section: FC<Props> = ({ children, title, id }) => {
   return (
-    <div id={id}>
-      <div
-        css={css`
-          display: flex;
-          flex-flow: column nowrap;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          color: white;
-        `}
-      >
-        <span>{title}</span>
-        <div
-          css={css`
-            padding: 5vh 5vw;
-            display: flex;
-            flex-flow: column wrap;
-            justify-content: center;
-            align-items: center;
-          `}
-        >
-          {children}
-        </div>
-      </div>
-    </div>
+    <SectionDiv id={id}>
+      <span>{title}</span>
+      <ContentDiv>{children}</ContentDiv>
+    </SectionDiv>
   );
 };
+
+const SectionDiv = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10vh 0px;
+  color: white;
+`;
+
+const ContentDiv = styled.div`
+  padding: 5vh 5vw;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+`;
