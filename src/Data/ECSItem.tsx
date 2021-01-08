@@ -2,8 +2,8 @@ import { ItemData } from './ItemData';
 
 export const ECSItemData: ItemData = {
   title: 'ECS',
-  img_small: { src: 'images/gudetama.jpg', alt: '' },
-  img_large: { src: 'images/gudetama.jpg', alt: '' },
+  img_small: { src: 'images/ecs.png', alt: '' },
+  img_large: { src: 'images/ecs.png', alt: '' },
   role: 'C++ & .NET C# Programmer',
   links: [
     { href: 'https://github.com/lambriggerbrian/ECSEngine', text: 'Repo' },

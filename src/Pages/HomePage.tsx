@@ -11,6 +11,7 @@ import { NTDDiagramsItemData } from '../Data/NTDDiagramsItem';
 import { RiteOfConquestItemData } from '../Data/RiteOfConquestItem';
 import { ImageServerItemData } from '../Data/ImageServerItem';
 import { HypedItemData } from '../Data/HypedItem';
+import { QnAItemData } from '../Data/QnAItem';
 
 export const HomePage: FC = () => {
   return (
@@ -71,6 +72,7 @@ export const HomePage: FC = () => {
         <GridDiv4x4>
           <GridItem data={ThisSiteItemData}></GridItem>
           <GridItem data={ECSItemData}></GridItem>
+          <GridItem data={QnAItemData} styled="contain"></GridItem>
           <GridItem data={NTDDiagramsItemData} styled="contain"></GridItem>
           <GridItem data={RiteOfConquestItemData}></GridItem>
           <GridItem data={ImageServerItemData}></GridItem>
