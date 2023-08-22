@@ -6,7 +6,6 @@ export const ECSItemData: ItemData = {
   img_large: { src: 'images/ecs.png', alt: '' },
   role: 'C++ & .NET C# Programmer',
   links: [
-    { href: 'https://github.com/lambriggerbrian/ECSEngine', text: 'Repo' },
     {
       href:
         'https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet-framework',

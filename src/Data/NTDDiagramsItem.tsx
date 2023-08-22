@@ -6,7 +6,6 @@ export const NTDDiagramsItemData: ItemData = {
   img_large: { src: 'images/ntdmodal.png', alt: '' },
   role: 'Fullstack Developer, Web Designer',
   links: [
-    { href: 'https://lambriggerbrian.me/ntddiagrams', text: 'Check it Out' },
     { href: 'https://github.com/lambriggerbrian/ntddiagrams', text: 'Repo' },
     { href: 'https://nodejs.org/en/about/', text: 'Node.JS' },
     { href: 'https://expressjs.com/', text: 'Express' },
